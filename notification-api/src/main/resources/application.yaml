@@ -1,22 +1,13 @@
 spring:
   application:
-    name: user-api
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/user-db
-    username: secret
-    password: secret
-  jpa:
-    generate-ddl: true
-    hibernate:
-      ddl-auto: update
+    name: notification-api
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
-      group-id: user-api
+      group-id: notification-api
+      auto-offset-reset: latest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      auto-offset-reset: latest
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -24,4 +15,5 @@ spring:
       user-created: user-created-topic
       outbox-processed: outbox-process-topic
 
-
+server:
+  port: 8082

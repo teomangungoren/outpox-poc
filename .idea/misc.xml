@@ -6,6 +6,7 @@
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/deneme" />
     <file type="web" url="file://$PROJECT_DIR$/notification-api" />
     <file type="web" url="file://$PROJECT_DIR$/user-api" />
   </component>

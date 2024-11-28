@@ -6,15 +6,17 @@ import jakarta.persistence.Entity
 import jakarta.persistence.EnumType
 import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
 data class Outbox(
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
+    val userId: Long,
     @Enumerated(EnumType.STRING)
-    val status: Status? = Status.PENDING,
+    var status: Status? = Status.PENDING,
     @Column(length = 200)
     val payload: String
 )

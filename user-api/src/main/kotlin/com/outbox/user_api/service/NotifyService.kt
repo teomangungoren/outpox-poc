@@ -12,8 +12,6 @@ class NotifyService(private val kafkaTemplate: KafkaTemplate<String,Any>) {
 
 
     fun notify(message: String) {
-        println(userCreatedTopic)
-        println(message)
         kafkaTemplate.send(userCreatedTopic,message)
     }
 }
